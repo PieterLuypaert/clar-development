@@ -1,9 +1,4 @@
-/* Main CSS file */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Add your styles here */
+:root{--font-xs:0.85rem;--font-base:1.25rem;--font-lg:1.3rem;--font-xl:2.5rem;--font-2xl:4.25rem;--font-3xl:7rem;--font-4xl:12rem;--font-5xl:14.5rem;--color-cream:#f8f6f1;--color-black:#1b1b1b;--color-blue:#082b9d;--color-green:#0d4135;--color-mint:#8acdb8;--color-brown:#a2543d;--color-yellow:#f4b63e;--color-peach:#f7d1ba;--color-white:#fff;--color-transition-blue:#082b9d;--color-transition-brown:#a2543d;--color-transition-peach:#f7d1ba;--color-transition-orange-dark:#975e1a;--color-transition-orange-light:#e7b46c;--color-transition-green-dark:#43503f;--color-transition-green-light:#679678;--color-transition-blue-dark:#44598b;--color-transition-blue-light:#8aaeca;--color-transition-red-dark:#622e3d;--color-transition-red-light:#ce8b9f;--color-transition-brown-dark:#99451c;--color-transition-brown-light:#d37e55}
+*,:after,:before{box-sizing:border-box}*{margin:0}html{height:100%}body{-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100%}canvas,img,picture,svg,video{display:block;max-width:100%}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}
+@font-face{font-display:swap;font-family:Akzidenz-Grotesk BQ;font-style:normal;font-weight:400;src:url(/assets/fonts/subset-AkzidenzGroteskBQ-Reg.29047bd5.woff2) format("woff2")}@font-face{font-display:swap;font-family:Canela Light;font-style:normal;font-weight:300;src:url(/assets/fonts/Canela-Light.woff2) format("woff2")}@font-face{font-display:swap;font-family:Canela Light Italic;font-style:italic;font-weight:300;src:url(/assets/fonts/Canela-LightItalic.woff2) format("woff2")}@font-face{font-display:swap;font-family:Canela Regular;font-style:normal;font-weight:400;src:url(/assets/fonts/Canela-Regular.woff2) format("woff2")}
 
