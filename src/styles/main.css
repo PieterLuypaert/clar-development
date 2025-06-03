@@ -1,5 +1,10 @@
+/* Import Variables */
+@import "abstracts/_variables.css";
+
+/* Import reset */
+@import "base/_reset.css";
+
 /* Import Fonts */
 @import "base/_fonts.css";
 
-/* Import Variables */
-@import "abstracts/_variables.css";
+
