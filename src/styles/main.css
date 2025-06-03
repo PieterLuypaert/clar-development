@@ -1,8 +1,5 @@
-/* Main CSS file */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+/* Import Fonts */
+@import "base/_fonts.css";
 
-/* Add your styles here */
+/* Import Variables */
+@import "abstracts/_variables.css";

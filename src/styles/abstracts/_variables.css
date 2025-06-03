@@ -1,0 +1,37 @@
+:root {
+  /* Typography - Font Sizes */
+  --font-xs: 0.85rem;
+  --font-base: 1.25rem;
+  --font-lg: 1.3rem;
+  --font-xl: 2.5rem;
+  --font-2xl: 4.25rem;
+  --font-3xl: 7rem;
+  --font-4xl: 12rem;
+  --font-5xl: 14.5rem;
+
+  /* Main Colors */
+  --color-cream: #f8f6f1;
+  --color-black: #1b1b1b;
+  --color-blue: #082b9d;
+  --color-green: #0d4135;
+  --color-mint: #8acdb8;
+  --color-brown: #a2543d;
+  --color-yellow: #f4b63e;
+  --color-peach: #f7d1ba;
+  --color-white: #ffffff;
+
+  /* Transition Colors for Horizontal Scroll */
+  --color-transition-blue: #082b9d;
+  --color-transition-brown: #a2543d;
+  --color-transition-peach: #f7d1ba;
+  --color-transition-orange-dark: #975e1a;
+  --color-transition-orange-light: #e7b46c;
+  --color-transition-green-dark: #43503f;
+  --color-transition-green-light: #679678;
+  --color-transition-blue-dark: #44598b;
+  --color-transition-blue-light: #8aaeca;
+  --color-transition-red-dark: #622e3d;
+  --color-transition-red-light: #ce8b9f;
+  --color-transition-brown-dark: #99451c;
+  --color-transition-brown-light: #d37e55;
+}
