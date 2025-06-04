@@ -1,11 +1,10 @@
 .mouse {
-    --dimensions: 2rem;
 
     position: fixed;
     inset: 0;
 
-    width: var(--dimensions);
-    height: var(--dimensions);
+    width: 2rem;
+    height: 2rem;
 
     pointer-events: none;
     mix-blend-mode: difference;
