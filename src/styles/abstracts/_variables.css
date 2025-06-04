@@ -1,37 +1,46 @@
 :root {
-  /* Typography - Font Sizes */
-  --font-xs: 0.85rem;
-  --font-base: 1.25rem;
-  --font-lg: 1.3rem;
-  --font-xl: 2.5rem;
-  --font-2xl: 4.25rem;
-  --font-3xl: 7rem;
-  --font-4xl: 12rem;
-  --font-5xl: 14.5rem;
+  /* Typography */
+  --font-normal: "Akzidenz-Grotesk BQ", sans-serif;
+  --font-display: Canela, serif;
 
-  /* Main Colors */
-  --color-cream: #f8f6f1;
-  --color-black: #1b1b1b;
-  --color-blue: #082b9d;
-  --color-green: #0d4135;
-  --color-mint: #8acdb8;
-  --color-brown: #a2543d;
-  --color-yellow: #f4b63e;
-  --color-peach: #f7d1ba;
-  --color-white: #ffffff;
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-base: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 5rem;
+  --spacing-xl: 7rem;
 
-  /* Transition Colors for Horizontal Scroll */
-  --color-transition-blue: #082b9d;
-  --color-transition-brown: #a2543d;
-  --color-transition-peach: #f7d1ba;
-  --color-transition-orange-dark: #975e1a;
-  --color-transition-orange-light: #e7b46c;
-  --color-transition-green-dark: #43503f;
-  --color-transition-green-light: #679678;
-  --color-transition-blue-dark: #44598b;
-  --color-transition-blue-light: #8aaeca;
-  --color-transition-red-dark: #622e3d;
-  --color-transition-red-light: #ce8b9f;
-  --color-transition-brown-dark: #99451c;
-  --color-transition-brown-light: #d37e55;
+  /* Colors */
+  --light: #f8f6f1;
+  --dark: #1b1b1b;
+  --primary: #082b9d;
+  --secondary-dark: #0d4135;
+  --secondary-medium: #12644a;
+  --secondary-light: #8acdb8;
+  --muted: #a2543d;
+  --accent: #f4b63e;
+  --soft: #f7d1ba;
+  --bright: #ffffff;
+
+  /* Theme Colors */
+  --hero-bg-color: var(--light);
+  --hero-text-color: var(--primary);
+
+  /* Font Sizes */
+  --text-xs: 0.85rem;
+  --text-sm: 1.1rem;
+  --text-base: 1.25rem;
+  --text-bm: 1.3rem;
+  --text-md: 2.5rem;
+  --text-lg: 4.25rem;
+  --text-xl: 7rem;
+  --text-xxl: 12rem;
+  --text-xxxl: 14.5rem;
+
+  /* Layout */
+  --breakpoint: 756px;
+  --breakpoint-container: 64rem;
+  --navbar-height: 4.5rem;
+  --sidebar: 16vw;
 }
