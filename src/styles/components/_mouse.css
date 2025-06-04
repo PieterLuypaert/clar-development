@@ -1,0 +1,16 @@
+.mouse {
+    --dimensions: 2rem;
+
+    position: fixed;
+    inset: 0;
+
+    width: var(--dimensions);
+    height: var(--dimensions);
+
+    pointer-events: none;
+    mix-blend-mode: difference;
+    background-color: var(--accent);
+    border-radius: 50%;
+
+    transform: scale(0);
+}
