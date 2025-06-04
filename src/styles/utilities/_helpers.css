@@ -1,0 +1,20 @@
+
+.spacing {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+.color-section__one {
+  background-color: var(--primary);
+  color: var(--bright);
+}
+
+.color-section__two {
+  background-color: var(--secondary-medium);
+  color: var(--secondary-light);
+}
+
+.color-section__tree {
+  background-color: var(--muted);
+  color: var(--soft);
+}
