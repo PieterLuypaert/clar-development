@@ -1,0 +1,10 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--bright);
+    z-index: 999;
+}
