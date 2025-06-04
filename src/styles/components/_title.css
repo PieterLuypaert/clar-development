@@ -1,0 +1,35 @@
+.title {
+    --size: 9vw;
+    line-height: 1;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    max-width: 21rem;
+}
+
+.title > span {
+    display: block;
+    font-size: var(--text-md);
+    overflow: hidden;
+}
+
+.title > span > span {
+    display: block;
+    transform: translateY(100%) rotate(5deg);
+    transform-origin: left bottom;
+}
+
+.title > span:nth-child(even) {
+    font-style: italic;
+    text-align: right;
+}
+
+@media screen and (width > 756px) {
+    .title {
+        max-width: none;
+    }
+
+    .title > span {
+        font-size: clamp(var(--text-lg), var(--size), var(--text-xl));
+        white-space: nowrap;
+    }
+}
