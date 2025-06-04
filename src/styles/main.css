@@ -1,10 +1,23 @@
-/* Import Variables */
-@import "abstracts/_variables.css";
+@import "/src/styles/abstracts/_variables.css";
 
-/* Import reset */
-@import "base/_reset.css";
+@import "/src/styles/base/_fonts.css";
+@import "/src/styles/base/_reset.css";
+@import "/src/styles/base/_typography.css";
 
-/* Import Fonts */
-@import "base/_fonts.css";
+@import "/src/styles/layout/_container.css";
+@import "/src/styles/layout/_navigation.css";
+@import "/src/styles/layout/_grid.css";
 
+@import "/src/styles/components/_hero.css";
+@import "/src/styles/components/_mouse.css";
+@import "/src/styles/components/_title.css";
+@import "/src/styles/components/_text.css";
+@import "/src/styles/components/_scroll.css";
+@import "/src/styles/components/_list.css";
+@import "/src/styles/components/_buttons.css";
+@import "/src/styles/components/_svg.css";
 
+@import "/src/styles/partials/_footer.css";
+@import "/src/styles/partials/_preloader.css";
+
+@import "/src/styles/utilities/_helpers.css";
