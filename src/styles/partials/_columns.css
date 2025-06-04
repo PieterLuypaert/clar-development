@@ -1,0 +1,7 @@
+.columns {
+    display: grid;
+
+    @media screen and (width > 756px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
