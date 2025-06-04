@@ -1,9 +1,9 @@
 .container {
-  max-width: var(--breakpoint-container);
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 
-  @media screen and (width > 756px) {
+  @media screen and (min-width: 757px) {
     padding: 0 var(--spacing-lg);
   }
 }

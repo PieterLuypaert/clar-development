@@ -21,7 +21,7 @@
   color: var(--primary);
 }
 
-@media screen and (width > 756px) {
+@media screen and (min-width: 756px) {
   .hero .hero__header {
     display: flex;
     flex-direction: column;

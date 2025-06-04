@@ -38,7 +38,6 @@
   --text-xxl: 12rem;
   --text-xxxl: 14.5rem;
 
-  /* Layout */
   --breakpoint: 756px;
   --breakpoint-container: 64rem;
   --navbar-height: 4.5rem;
@@ -144,11 +143,11 @@ h2,
 }
 
 .container {
-  max-width: var(--breakpoint-container);
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 
-  @media screen and (width > 756px) {
+  @media screen and (min-width: 757px) {
     padding: 0 var(--spacing-lg);
   }
 }
@@ -224,7 +223,7 @@ h2,
   color: var(--primary);
 }
 
-@media screen and (width > 756px) {
+@media screen and (min-width: 756px) {
   .hero .hero__header {
     display: flex;
     flex-direction: column;
@@ -264,40 +263,47 @@ h2,
     transform: scale(0);
 }
 .title {
-    --size: 9vw;
+  --size: 10vw;
+  line-height: 1.1;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  max-width: 100%;
+  margin-top: var(--spacing-base);
+
+  @media screen and (min-width: 768px) {
+    --size: 10vw;
     line-height: 1;
-    font-family: var(--font-display);
-    text-transform: uppercase;
     max-width: 21rem;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --size: 12vw;
+    max-width: none;
+  }
 }
 
 .title > span {
-    display: block;
-    font-size: var(--text-md);
-    overflow: hidden;
+  display: block;
+  font-size: clamp(var(--text-lg), var(--size), var(--text-xl));
+  overflow: hidden;
+
+  @media screen and (min-width: 1024px) {
+    white-space: nowrap;
+  }
 }
 
 .title > span > span {
-    display: block;
-    transform: translateY(100%) rotate(5deg);
-    transform-origin: left bottom;
+  display: block;
+  transform: translateY(100%) rotate(5deg);
+  transform-origin: left bottom;
 }
 
 .title > span:nth-child(even) {
-    font-style: italic;
-    text-align: right;
+  font-style: italic;
+  text-align: right;
 }
 
-@media screen and (width > 756px) {
-    .title {
-        max-width: none;
-    }
-
-    .title > span {
-        font-size: clamp(var(--text-lg), var(--size), var(--text-xl));
-        white-space: nowrap;
-    }
-}
 
 .text:not(.text.expertise-section) {
     max-width: 22rem;

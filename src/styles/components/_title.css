@@ -1,35 +1,41 @@
 .title {
-    --size: 9vw;
+  --size: 10vw;
+  line-height: 1.1;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  max-width: 100%;
+  margin-top: var(--spacing-base);
+
+  @media screen and (min-width: 768px) {
+    --size: 10vw;
     line-height: 1;
-    font-family: var(--font-display);
-    text-transform: uppercase;
     max-width: 21rem;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --size: 12vw;
+    max-width: none;
+  }
 }
 
 .title > span {
-    display: block;
-    font-size: var(--text-md);
-    overflow: hidden;
+  display: block;
+  font-size: clamp(var(--text-lg), var(--size), var(--text-xl));
+  overflow: hidden;
+
+  @media screen and (min-width: 1024px) {
+    white-space: nowrap;
+  }
 }
 
 .title > span > span {
-    display: block;
-    transform: translateY(100%) rotate(5deg);
-    transform-origin: left bottom;
+  display: block;
+  transform: translateY(100%) rotate(5deg);
+  transform-origin: left bottom;
 }
 
 .title > span:nth-child(even) {
-    font-style: italic;
-    text-align: right;
-}
-
-@media screen and (width > 756px) {
-    .title {
-        max-width: none;
-    }
-
-    .title > span {
-        font-size: clamp(var(--text-lg), var(--size), var(--text-xl));
-        white-space: nowrap;
-    }
+  font-style: italic;
+  text-align: right;
 }
