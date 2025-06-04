@@ -17,7 +17,7 @@
     left: 0;
     bottom: calc(-1 * var(--spacing-md) / 3);  height: 1px;
     width: 100%;
-    background-color: currentColor;
+    background-color: white;
 }
 
 .text-list {
