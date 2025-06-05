@@ -1,6 +1,8 @@
 
-.text:not(.text.expertise-section) {
-    max-width: 22rem;
+@media (min-width: 768px) {
+    .text:not(.text.expertise-section) {
+        max-width: 22rem;
+    }
 }
 
 .text h2 {
