@@ -385,10 +385,7 @@ h2,
 }
 
 .scroll:before {
-    content: '';
-    width: var(--spacing-md);
     height: 100%;
-    background-image: linear-gradient(to right, var(--hero-bg-color), transparent);
     position: absolute;
     left: 0;
     top: 0;
@@ -396,7 +393,6 @@ h2,
 }
 
 .scroll .scroll__list {
-    padding: 0;
     list-style: none;
     display: flex;
 }
