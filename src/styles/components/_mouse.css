@@ -7,8 +7,8 @@
     height: 2rem;
 
     pointer-events: none;
-    mix-blend-mode: difference;
-    background-color: var(--accent);
+    mixed-blend-mode: difference;
+    background-color: var(--accent);	
     border-radius: 50%;
 
     transform: scale(0);
