@@ -21,6 +21,10 @@
   color: var(--primary);
 }
 
+.hero .hero__title-text {
+  display: none;
+}
+
 @media screen and (min-width: 756px) {
   .hero .hero__header {
     display: flex;
@@ -34,6 +38,10 @@
     text-orientation: mixed;
     transform: rotate(180deg);
     text-align: end;
+  }
+  
+  .hero .hero__title-text {
+    display: block;
   }
 
   .hero .hero__text {
