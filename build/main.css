@@ -274,7 +274,7 @@ h2,
     height: 2rem;
 
     pointer-events: none;
-    mixed-blend-mode: difference;
+    mix-blend-mode: difference;
     background-color: var(--accent);	
     border-radius: 50%;
 
