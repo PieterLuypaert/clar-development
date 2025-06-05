@@ -3,7 +3,10 @@
   color: var(--hero-text-color);
   padding-top: 0;
 }
-
+.hero .hero__header {
+  margin-bottom: 10rem;
+  color: var(--primary);
+}
 .hero .hero__title {
   text-transform: uppercase;
   margin: 0;
@@ -14,11 +17,6 @@
 
 .hero .hero__title-text {
   display: block;
-}
-
-.hero .hero__header {
-  margin-bottom: var(--spacing-md);
-  color: var(--primary);
 }
 
 .hero .hero__title-text {
@@ -39,7 +37,7 @@
     transform: rotate(180deg);
     text-align: end;
   }
-  
+
   .hero .hero__title-text {
     display: block;
   }
