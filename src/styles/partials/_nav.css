@@ -8,9 +8,10 @@
     justify-content: flex-end;
     align-items: center;
     padding: var(--spacing-sm) var(--spacing-base);
-    height: var(--navbar-height);
+    height: 4.5rem;
     color: var(--primary);
 }
+
 
 .nav .nav__logo {
     display: flex;
