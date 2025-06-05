@@ -146,6 +146,7 @@ h2,
   max-width: 64rem;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  --sidebar: 35vw;
 
   @media screen and (min-width: 757px) {
     padding: 0 var(--spacing-lg);
@@ -331,7 +332,6 @@ h2,
     flex-direction: column;
     gap: var(--spacing-lg);
 }
-
 .scroll {
     display: flex;
     align-items: center;

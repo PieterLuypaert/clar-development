@@ -10004,46 +10004,6 @@ var showSvg = function showSvg() {
 
 /***/ }),
 
-/***/ "./src/scripts/animations/titles.js":
-/*!******************************************!*\
-  !*** ./src/scripts/animations/titles.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   fadeInTitles: () => (/* binding */ fadeInTitles)
-/* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-
-var fadeInTitles = function fadeInTitles() {
-  var $elements = document.querySelectorAll("[data-animation='title']");
-  $elements.forEach(function ($element) {
-    $element.querySelectorAll("span").forEach(function (span) {
-      if (!span.querySelector("span")) {
-        span.innerHTML = "<span>".concat(span.innerHTML, "</span>");
-      }
-    });
-    var lineElements = $element.querySelectorAll("span > span");
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(lineElements, {
-      y: 0,
-      rotation: 0,
-      duration: 0.4,
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: $element,
-        start: "top 85%",
-        toggleActions: "play reset play reset",
-        immediateRender: false
-      }
-    });
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fadeInTitles);
-
-/***/ }),
-
 /***/ "./src/scripts/lottie.js":
 /*!*******************************!*\
   !*** ./src/scripts/lottie.js ***!
@@ -10086,16 +10046,15 @@ function loadLottieFiles() {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var _animations_titles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/titles */ "./src/scripts/animations/titles.js");
-/* harmony import */ var _animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/horizontal-scroll */ "./src/scripts/animations/horizontal-scroll.js");
-/* harmony import */ var _animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/pin-animation */ "./src/scripts/animations/pin-animation.js");
-/* harmony import */ var _animations_fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/fade */ "./src/scripts/animations/fade.js");
-/* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
-/* harmony import */ var _animations_preloader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/preloader */ "./src/scripts/animations/preloader.js");
-/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
-/* harmony import */ var _animations_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/svg */ "./src/scripts/animations/svg.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/horizontal-scroll */ "./src/scripts/animations/horizontal-scroll.js");
+/* harmony import */ var _animations_pin_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/pin-animation */ "./src/scripts/animations/pin-animation.js");
+/* harmony import */ var _animations_fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/fade */ "./src/scripts/animations/fade.js");
+/* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
+/* harmony import */ var _animations_preloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/preloader */ "./src/scripts/animations/preloader.js");
+/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
+/* harmony import */ var _animations_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/svg */ "./src/scripts/animations/svg.js");
 
 
 
@@ -10105,20 +10064,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-gsap__WEBPACK_IMPORTED_MODULE_8__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__["default"]);
+gsap__WEBPACK_IMPORTED_MODULE_7__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_8__["default"]);
 var afterLoad = function afterLoad() {
-  (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__.pinSlider)();
-  (0,_animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_lottie__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,_animations_titles__WEBPACK_IMPORTED_MODULE_0__.fadeInTitles)();
-  (0,_animations_fade__WEBPACK_IMPORTED_MODULE_3__.fadeInUp)();
-  (0,_animations_fade__WEBPACK_IMPORTED_MODULE_3__.staggerFade)();
-  (0,_animations_svg__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_0__.pinSlider)();
+  (0,_animations_pin_animation__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_lottie__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_animations_fade__WEBPACK_IMPORTED_MODULE_2__.fadeInUp)();
+  (0,_animations_fade__WEBPACK_IMPORTED_MODULE_2__.staggerFade)();
+  (0,_animations_svg__WEBPACK_IMPORTED_MODULE_6__["default"])();
 };
 document.addEventListener("DOMContentLoaded", function () {
-  (0,_animations_preloader__WEBPACK_IMPORTED_MODULE_5__["default"])(afterLoad);
+  (0,_animations_preloader__WEBPACK_IMPORTED_MODULE_4__["default"])(afterLoad);
 });
 
 /***/ }),

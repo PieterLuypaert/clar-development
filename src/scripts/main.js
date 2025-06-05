@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { fadeInTitles } from "./animations/titles";
 import { pinSlider } from "./animations/horizontal-scroll";
 import pinSideInSection from "./animations/pin-animation";
 import { fadeInUp, staggerFade } from "./animations/fade";
@@ -17,7 +16,6 @@ const afterLoad = () => {
   pinSlider();
   pinSideInSection();
   loadLottieFiles();
-  fadeInTitles();
   fadeInUp();
   staggerFade();
   showSvg();
