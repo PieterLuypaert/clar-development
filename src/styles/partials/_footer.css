@@ -25,7 +25,6 @@ section:last-of-type {
 }
 
 .footer h2 {
-    font-size: var(--text-lg);
     text-align: center;
 }
 

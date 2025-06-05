@@ -26,6 +26,7 @@
     height: var(--size-inner);
     border-radius: var(--size);
     transition: all .5s cubic-bezier(.97,-0.53,.28,1.44);
+    font-size: var(--text-bm);
 }
 
 .button.button-shape:hover .button__idk {
