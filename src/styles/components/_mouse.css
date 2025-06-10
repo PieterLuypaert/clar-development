@@ -10,8 +10,6 @@
     background-color: var(--accent);    
     border-radius: 50%;
     
-    transform: scale(0);
-    
     @media (max-width: 768px) {
         display: none;
     }
