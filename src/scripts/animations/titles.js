@@ -8,18 +8,19 @@ export const fadeInTitles = () => {
 
         gsap.fromTo(animation, 
             { 
-                y: "100%"
+                y: "100%",
+                opacity: 0,
             },
             {
                 y: 0,
+                opacity: 1,
                 rotation: 0,
                 duration: 0.4,
-                stagger: 0.15, 
+                stagger: 0.15,
                 scrollTrigger: {
                     trigger: $element,
                     start: "top 85%",
                     toggleActions: "play reset play reset",
-                    immediateRender: false,
                 },
             }
         );
