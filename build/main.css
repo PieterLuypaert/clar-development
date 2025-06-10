@@ -484,9 +484,10 @@ h2,
     transform-origin: center;
 }
 
-.svg-show {
-    stroke: currentColor;
+.svg {
+  stroke: currentColor;
 }
+
 section:last-of-type {
     margin-bottom: 100vh;
 }
@@ -534,7 +535,6 @@ section:last-of-type {
     color: var(--bright);
     z-index: 999;
 }
-
 .spacing {
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
@@ -554,6 +554,4 @@ section:last-of-type {
   background-color: var(--muted);
   color: var(--soft);
 }
-
-
 
