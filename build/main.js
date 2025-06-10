@@ -10355,13 +10355,10 @@ __webpack_require__.r(__webpack_exports__);
 var fadeInTitles = function fadeInTitles() {
   var $elements = document.querySelectorAll("[data-animation='title']");
   $elements.forEach(function ($element) {
-    $element.querySelectorAll("span").forEach(function (span) {
-      if (!span.querySelector("span")) {
-        span.innerHTML = "<span>".concat(span.innerHTML, "</span>");
-      }
-    });
-    var lineElements = $element.querySelectorAll("span > span");
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(lineElements, {
+    var animation = $element.querySelectorAll("span");
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(animation, {
+      y: "100%"
+    }, {
       y: 0,
       rotation: 0,
       duration: 0.4,
@@ -10423,6 +10420,7 @@ function loadLottieFiles() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap_SplitText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! gsap/SplitText */ "./node_modules/gsap/SplitText.js");
 /* harmony import */ var _animations_titles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/titles */ "./src/scripts/animations/titles.js");
 /* harmony import */ var _animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/horizontal-scroll */ "./src/scripts/animations/horizontal-scroll.js");
 /* harmony import */ var _animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/pin-animation */ "./src/scripts/animations/pin-animation.js");
@@ -10441,7 +10439,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_8__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__["default"]);
+
+gsap__WEBPACK_IMPORTED_MODULE_8__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__["default"], gsap_SplitText__WEBPACK_IMPORTED_MODULE_10__.SplitText);
 var afterLoad = function afterLoad() {
   (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__.pinSlider)();
