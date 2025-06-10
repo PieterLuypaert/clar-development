@@ -10398,7 +10398,7 @@ function loadLottieFiles() {
       autoplay: true,
       loop: true,
       canvas: $canvas,
-      speed: 1,
+      speed: 2,
       layout: {
         fit: "cover",
         align: [.5, 0]

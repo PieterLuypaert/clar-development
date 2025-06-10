@@ -8,13 +8,6 @@
   position: relative;
 }
 
-.scroll:before {
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-}
 
 .scroll .scroll__list {
   list-style: none;

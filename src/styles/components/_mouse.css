@@ -1,15 +1,18 @@
 .mouse {
-
     position: fixed;
     inset: 0;
-
+    
     width: 2rem;
     height: 2rem;
-
+    
     pointer-events: none;
     mix-blend-mode: difference;
-    background-color: var(--accent);	
+    background-color: var(--accent);    
     border-radius: 50%;
-
+    
     transform: scale(0);
+    
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
