@@ -10108,13 +10108,12 @@ var horizontalScroll = function horizontalScroll() {
     scrollTrigger: {
       trigger: ".scroll",
       start: "center center",
-      end: "+=5000",
+      end: "3500",
       pin: true,
       scrub: true,
-      duration: 1,
       onUpdate: function onUpdate(_ref) {
         var progress = _ref.progress;
-        // zoekt actieve ding op basis van scrollen
+        // zoekt actieve element of stuk op basis van scrollen
         var index = Math.min(Math.floor(progress * items.length), items.length - 1);
         var activeItem = items[index];
 

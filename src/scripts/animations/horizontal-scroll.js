@@ -15,12 +15,11 @@ const horizontalScroll = () => {
     scrollTrigger: {
       trigger: ".scroll",
       start: "center center",
-      end: "+=5000", 
+      end: "3500", 
       pin: true,
       scrub: true,
-      duration: 1,
       onUpdate: ({ progress }) => {
-        // zoekt actieve ding op basis van scrollen
+        // zoekt actieve element of stuk op basis van scrollen
         const index = Math.min(Math.floor(progress * items.length), items.length - 1);
         const activeItem = items[index];
         
