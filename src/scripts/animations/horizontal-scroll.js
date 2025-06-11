@@ -8,53 +8,44 @@ export const changeColor = ($element, textColor, backgroundColor) => {
 };
 
 export const pinSlider = () => {
-  const $hero = document.querySelector("[data-parent='color-change']");
-  if (!$hero) return;
+  const $hero = document.querySelector(".hero");
+  const $list = document.querySelector(".scroll__list");
 
-  const defaultBackgroundColor = $hero.dataset.bg;
-  const defaultTextColor = $hero.dataset.text;
+  if (!$hero || !$list) return;
 
-  document.querySelectorAll("[data-animation='scroll']").forEach((slider) => {
-    const $list = slider.querySelector("[data-child='scroll__list']");
-    if (!$list) return;
+  const defaultBg = $hero.dataset.bg;
+  const defaultText = $hero.dataset.text;
+  const margin = (window.innerWidth / 10) * 2;
 
-    const items = $list.querySelectorAll("li");
-    const margin = (window.innerWidth / 10) * 2;
+  const scrollTween = gsap.to($list, {
+    x: -($list.scrollWidth + margin),
+    ease: "linear",
+    scrollTrigger: {
+      trigger: ".scroll",
+      start: "center center",
+      pin: true,
+      scrub: true,
+      onLeaveBack: () => changeColor($hero, defaultText, defaultBg),
+    },
+  });
 
-    const scrollTween = gsap.to($list, {
-      x: -($list.scrollWidth + margin),
-      ease: "linear",
+  document.querySelectorAll(".scroll__list li").forEach((item) => {
+    const quote = item.querySelector("blockquote");
+    if (!quote) return;
+
+    gsap.to(item, {
+      opacity: 0,
       scrollTrigger: {
-        trigger: slider,
-        start: "center center",
-        pin: slider,
+        trigger: quote,
+        containerAnimation: scrollTween,
+        start: "0 20%",
+        end: "75% 20%",
+        pinSpacing: false,
         scrub: true,
-        onLeaveBack: () => {
-          changeColor($hero, defaultTextColor, defaultBackgroundColor);
-        },
+        onEnter: () => changeColor($hero, item.dataset.bg, item.dataset.text),
+        onEnterBack: () =>
+          changeColor($hero, item.dataset.bg, item.dataset.text),
       },
-    });
-
-    items.forEach((item) => {
-      const quote = item.querySelector("blockquote");
-      if (!quote) return;
-
-      const itemTextColor = item.dataset.text;
-      const itemBackgroundColor = item.dataset.bg;
-      gsap.to(item, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: quote,
-          containerAnimation: scrollTween,
-          start: "0 20%",
-          end: "75% 20%",
-          pinSpacing: false,
-          scrub: true,
-          onEnter: () => changeColor($hero, itemBackgroundColor, itemTextColor),
-          onEnterBack: () =>
-            changeColor($hero, itemBackgroundColor, itemTextColor),
-        },
-      });
     });
   });
 };

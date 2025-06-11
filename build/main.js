@@ -10104,50 +10104,44 @@ var changeColor = function changeColor($element, textColor, backgroundColor) {
   });
 };
 var pinSlider = function pinSlider() {
-  var $hero = document.querySelector("[data-parent='color-change']");
-  if (!$hero) return;
-  var defaultBackgroundColor = $hero.dataset.bg;
-  var defaultTextColor = $hero.dataset.text;
-  document.querySelectorAll("[data-animation='scroll']").forEach(function (slider) {
-    var $list = slider.querySelector("[data-child='scroll__list']");
-    if (!$list) return;
-    var items = $list.querySelectorAll("li");
-    var margin = window.innerWidth / 10 * 2;
-    var scrollTween = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($list, {
-      x: -($list.scrollWidth + margin),
-      ease: "linear",
+  var $hero = document.querySelector(".hero");
+  var $list = document.querySelector(".scroll__list");
+  if (!$hero || !$list) return;
+  var defaultBg = $hero.dataset.bg;
+  var defaultText = $hero.dataset.text;
+  var margin = window.innerWidth / 10 * 2;
+  var scrollTween = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($list, {
+    x: -($list.scrollWidth + margin),
+    ease: "linear",
+    scrollTrigger: {
+      trigger: ".scroll",
+      start: "center center",
+      pin: true,
+      scrub: true,
+      onLeaveBack: function onLeaveBack() {
+        return changeColor($hero, defaultText, defaultBg);
+      }
+    }
+  });
+  document.querySelectorAll(".scroll__list li").forEach(function (item) {
+    var quote = item.querySelector("blockquote");
+    if (!quote) return;
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(item, {
+      opacity: 0,
       scrollTrigger: {
-        trigger: slider,
-        start: "center center",
-        pin: slider,
+        trigger: quote,
+        containerAnimation: scrollTween,
+        start: "0 20%",
+        end: "75% 20%",
+        pinSpacing: false,
         scrub: true,
-        onLeaveBack: function onLeaveBack() {
-          changeColor($hero, defaultTextColor, defaultBackgroundColor);
+        onEnter: function onEnter() {
+          return changeColor($hero, item.dataset.bg, item.dataset.text);
+        },
+        onEnterBack: function onEnterBack() {
+          return changeColor($hero, item.dataset.bg, item.dataset.text);
         }
       }
-    });
-    items.forEach(function (item) {
-      var quote = item.querySelector("blockquote");
-      if (!quote) return;
-      var itemTextColor = item.dataset.text;
-      var itemBackgroundColor = item.dataset.bg;
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(item, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: quote,
-          containerAnimation: scrollTween,
-          start: "0 20%",
-          end: "75% 20%",
-          pinSpacing: false,
-          scrub: true,
-          onEnter: function onEnter() {
-            return changeColor($hero, itemBackgroundColor, itemTextColor);
-          },
-          onEnterBack: function onEnterBack() {
-            return changeColor($hero, itemBackgroundColor, itemTextColor);
-          }
-        }
-      });
     });
   });
 };
@@ -10227,26 +10221,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 var pinSideInSection = function pinSideInSection() {
-  document.querySelectorAll("[data-animation='pin']").forEach(function (section) {
-    var parentElement = section.querySelector("[data-child='pin-element']");
-    var animatedElement = parentElement === null || parentElement === void 0 ? void 0 : parentElement.querySelector("[data-child='pin-animation']");
-    if (!parentElement || !animatedElement) return;
-    var isFlipped = parentElement.hasAttribute("flipped");
-    var scrubValue = parentElement.getAttribute("scrub") || 0.75;
-    var directionMultiplier = isFlipped ? -1 : 1;
-    var heightDifference = window.innerHeight - animatedElement.offsetHeight;
-    var yOffset = heightDifference * directionMultiplier;
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(animatedElement, {
-      y: yOffset,
-      scrollTrigger: {
-        trigger: section,
-        start: "top 0",
-        end: "bottom bottom",
-        pin: parentElement,
-        pinSpacing: false,
-        scrub: scrubValue
-      }
-    });
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".hero__title-text", {
+    y: function y() {
+      return -(window.innerHeight - document.querySelector(".hero__title-text").offsetHeight);
+    },
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top 0",
+      end: "bottom bottom",
+      pin: ".hero__title",
+      pinSpacing: false,
+      scrub: 0.75
+    }
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pinSideInSection);
