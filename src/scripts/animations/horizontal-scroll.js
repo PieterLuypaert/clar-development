@@ -1,53 +1,47 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const changeColor = ($element, textColor, backgroundColor) => {
-  gsap.to($element, {
-    "--hero-text-color": textColor,
-    "--hero-bg-color": backgroundColor,
-  });
-};
+gsap.registerPlugin(ScrollTrigger);
 
-export const pinSlider = () => {
-  const $hero = document.querySelector(".hero");
-  const $list = document.querySelector(".scroll__list");
+const horizontalScroll = () => {
+  const hero = document.querySelector(".hero");
+  const list = document.querySelector(".scroll__list");
+  const items = document.querySelectorAll(".scroll__list li");
+  
+  const defaultTextColor = hero.dataset.text;
+  const defaultBgColor = hero.dataset.bg;
 
-  if (!$hero || !$list) return;
-
-  const defaultBg = $hero.dataset.bg;
-  const defaultText = $hero.dataset.text;
-  const margin = (window.innerWidth / 10) * 2;
-
-  const scrollTween = gsap.to($list, {
-    x: -($list.scrollWidth + margin),
-    ease: "linear",
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".scroll",
       start: "center center",
+      end: "+=5000", 
       pin: true,
       scrub: true,
-      onLeaveBack: () => changeColor($hero, defaultText, defaultBg),
-    },
-  });
-
-  document.querySelectorAll(".scroll__list li").forEach((item) => {
-    const quote = item.querySelector("blockquote");
-    if (!quote) return;
-
-    gsap.to(item, {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: quote,
-        containerAnimation: scrollTween,
-        start: "0 20%",
-        end: "75% 20%",
-        pinSpacing: false,
-        scrub: true,
-        onEnter: () => changeColor($hero, item.dataset.bg, item.dataset.text),
-        onEnterBack: () =>
-          changeColor($hero, item.dataset.bg, item.dataset.text),
+      duration: 1,
+      onUpdate: ({ progress }) => {
+        // zoekt actieve ding op basis van scrollen
+        const index = Math.min(Math.floor(progress * items.length), items.length - 1);
+        const activeItem = items[index];
+        
+        // dit pats de kleur veranderen toe
+        gsap.to(hero, {
+          "--hero-text-color": activeItem.dataset.text,
+          "--hero-bg-color": activeItem.dataset.bg ,
+          duration: 0.3
+        });
       },
-    });
+      onLeaveBack: () => {
+        gsap.to(hero, {
+          "--hero-text-color": defaultTextColor,
+          "--hero-bg-color": defaultBgColor,
+          duration: 0.3
+        });
+      }
+    }
   });
+  
+  tl.to(list, { x: -list.scrollWidth });
 };
 
-export default { pinSlider, changeColor };
+export default horizontalScroll;
