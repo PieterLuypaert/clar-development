@@ -10099,6 +10099,7 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 var horizontalScroll = function horizontalScroll() {
+  var scrollContainer = document.querySelector("[data-animation='scroll']");
   var hero = document.querySelector(".hero");
   var list = document.querySelector(".scroll__list");
   var items = document.querySelectorAll(".scroll__list li");
@@ -10106,7 +10107,7 @@ var horizontalScroll = function horizontalScroll() {
   var defaultBgColor = hero.dataset.bg;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      trigger: ".scroll",
+      trigger: scrollContainer,
       start: "center center",
       end: "3500",
       pin: true,
