@@ -10121,15 +10121,13 @@ var horizontalScroll = function horizontalScroll() {
         // dit pats de kleur veranderen toe
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
           "--hero-text-color": activeItem.dataset.text,
-          "--hero-bg-color": activeItem.dataset.bg,
-          duration: 0.3
+          "--hero-bg-color": activeItem.dataset.bg
         });
       },
       onLeaveBack: function onLeaveBack() {
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
           "--hero-text-color": defaultTextColor,
-          "--hero-bg-color": defaultBgColor,
-          duration: 0.3
+          "--hero-bg-color": defaultBgColor
         });
       }
     }

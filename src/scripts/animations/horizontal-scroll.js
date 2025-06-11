@@ -30,14 +30,12 @@ const horizontalScroll = () => {
         gsap.to(hero, {
           "--hero-text-color": activeItem.dataset.text,
           "--hero-bg-color": activeItem.dataset.bg,
-          duration: 0.3
         });
       },
       onLeaveBack: () => {
         gsap.to(hero, {
           "--hero-text-color": defaultTextColor,
           "--hero-bg-color": defaultBgColor,
-          duration: 0.3
         });
       }
     }
