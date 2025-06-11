@@ -10091,64 +10091,54 @@ var staggerFade = function staggerFade() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeColor: () => (/* binding */ changeColor),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   pinSlider: () => (/* binding */ pinSlider)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
-var changeColor = function changeColor($element, textColor, backgroundColor) {
-  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($element, {
-    "--hero-text-color": textColor,
-    "--hero-bg-color": backgroundColor
-  });
-};
-var pinSlider = function pinSlider() {
-  var $hero = document.querySelector(".hero");
-  var $list = document.querySelector(".scroll__list");
-  if (!$hero || !$list) return;
-  var defaultBg = $hero.dataset.bg;
-  var defaultText = $hero.dataset.text;
-  var margin = window.innerWidth / 10 * 2;
-  var scrollTween = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($list, {
-    x: -($list.scrollWidth + margin),
-    ease: "linear",
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+var horizontalScroll = function horizontalScroll() {
+  var hero = document.querySelector(".hero");
+  var list = document.querySelector(".scroll__list");
+  var items = document.querySelectorAll(".scroll__list li");
+  var defaultTextColor = hero.dataset.text;
+  var defaultBgColor = hero.dataset.bg;
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: ".scroll",
       start: "center center",
+      end: "+=5000",
       pin: true,
       scrub: true,
+      duration: 1,
+      onUpdate: function onUpdate(_ref) {
+        var progress = _ref.progress;
+        // zoekt actieve ding op basis van scrollen
+        var index = Math.min(Math.floor(progress * items.length), items.length - 1);
+        var activeItem = items[index];
+
+        // dit pats de kleur veranderen toe
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
+          "--hero-text-color": activeItem.dataset.text,
+          "--hero-bg-color": activeItem.dataset.bg,
+          duration: 0.3
+        });
+      },
       onLeaveBack: function onLeaveBack() {
-        return changeColor($hero, defaultText, defaultBg);
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
+          "--hero-text-color": defaultTextColor,
+          "--hero-bg-color": defaultBgColor,
+          duration: 0.3
+        });
       }
     }
   });
-  document.querySelectorAll(".scroll__list li").forEach(function (item) {
-    var quote = item.querySelector("blockquote");
-    if (!quote) return;
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(item, {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: quote,
-        containerAnimation: scrollTween,
-        start: "0 20%",
-        end: "75% 20%",
-        pinSpacing: false,
-        scrub: true,
-        onEnter: function onEnter() {
-          return changeColor($hero, item.dataset.bg, item.dataset.text);
-        },
-        onEnterBack: function onEnterBack() {
-          return changeColor($hero, item.dataset.bg, item.dataset.text);
-        }
-      }
-    });
+  tl.to(list, {
+    x: -list.scrollWidth
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  pinSlider: pinSlider,
-  changeColor: changeColor
-});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (horizontalScroll);
 
 /***/ }),
 
@@ -10215,27 +10205,34 @@ var animateMouse = function animateMouse() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   pinSideInSection: () => (/* binding */ pinSideInSection)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
-var pinSideInSection = function pinSideInSection() {
-  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".hero__title-text", {
-    y: function y() {
-      return -(window.innerHeight - document.querySelector(".hero__title-text").offsetHeight);
-    },
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top 0",
-      end: "bottom bottom",
-      pin: ".hero__title",
-      pinSpacing: false,
-      scrub: 0.75
-    }
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+var pinAnimation = function pinAnimation() {
+  var pinElements = document.querySelectorAll('[data-animation="pin"]');
+  pinElements.forEach(function (element) {
+    var titleText = element.querySelector(".hero__title-text");
+    var titleContainer = element.querySelector(".hero__title");
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(titleText, {
+      y: function y() {
+        return titleText.offsetHeight - window.innerHeight;
+      },
+      scrollTrigger: {
+        trigger: element,
+        start: "top 0",
+        end: "bottom bottom",
+        pin: titleContainer,
+        pinSpacing: false,
+        scrub: 0.75
+      }
+    });
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pinSideInSection);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pinAnimation);
 
 /***/ }),
 
@@ -10430,7 +10427,7 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_8__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__["default"], gsap_SplitText__WEBPACK_IMPORTED_MODULE_10__.SplitText);
 var afterLoad = function afterLoad() {
   (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__.pinSlider)();
+  (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_lottie__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_animations_titles__WEBPACK_IMPORTED_MODULE_0__.fadeInTitles)();

@@ -2,7 +2,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { fadeInTitles } from "./animations/titles";
-import { pinSlider } from "./animations/horizontal-scroll";
+import horizontalScroll, { pinSlider } from "./animations/horizontal-scroll";
 import pinSideInSection from "./animations/pin-animation";
 import { fadeInUp, staggerFade } from "./animations/fade";
 import animateMouse from "./animations/mouse";
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const afterLoad = () => {
   animateMouse();
-  pinSlider();
+  horizontalScroll();
   pinSideInSection();
   loadLottieFiles();
   fadeInTitles();
