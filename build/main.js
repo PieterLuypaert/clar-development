@@ -10104,12 +10104,12 @@ var horizontalScroll = function horizontalScroll() {
   var list = document.querySelector(".scroll__list");
   var items = document.querySelectorAll(".scroll__list li");
   var defaultTextColor = hero.dataset.text;
-  var defaultBgColor = hero.dataset.bg;
+  var defaultBackgroundColor = hero.dataset.background;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: scrollContainer,
       start: "center center",
-      end: "3500",
+      end: "3000",
       pin: true,
       scrub: true,
       onUpdate: function onUpdate(_ref) {
@@ -10121,14 +10121,14 @@ var horizontalScroll = function horizontalScroll() {
         // dit pats de kleur veranderen toe
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
           "--hero-text-color": activeItem.dataset.text,
-          "--hero-bg-color": activeItem.dataset.bg,
+          "--hero-bg-color": activeItem.dataset.background,
           duration: 0.3
         });
       },
       onLeaveBack: function onLeaveBack() {
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
           "--hero-text-color": defaultTextColor,
-          "--hero-bg-color": defaultBgColor,
+          "--hero-bg-color": defaultBackgroundColor,
           duration: 0.3
         });
       }

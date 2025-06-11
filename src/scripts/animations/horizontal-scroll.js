@@ -11,13 +11,13 @@ const horizontalScroll = () => {
   const items = document.querySelectorAll(".scroll__list li");
 
   const defaultTextColor = hero.dataset.text;
-  const defaultBgColor = hero.dataset.bg;
+  const defaultBackgroundColor = hero.dataset.background;
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: scrollContainer,
       start: "center center",
-      end: "3500",
+      end: "3000",
       pin: true,
       scrub: true,
       onUpdate: ({ progress }) => {
@@ -31,14 +31,14 @@ const horizontalScroll = () => {
         // dit pats de kleur veranderen toe
         gsap.to(hero, {
           "--hero-text-color": activeItem.dataset.text,
-          "--hero-bg-color": activeItem.dataset.bg,
+          "--hero-bg-color": activeItem.dataset.background,
           duration: 0.3,
         });
       },
       onLeaveBack: () => {
         gsap.to(hero, {
           "--hero-text-color": defaultTextColor,
-          "--hero-bg-color": defaultBgColor,
+          "--hero-bg-color": defaultBackgroundColor,
           duration: 0.3,
         });
       },
