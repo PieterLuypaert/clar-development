@@ -1,21 +1,27 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const pinSideInSection = () => {
-  gsap.to(".hero__title-text", {
-    y: () =>
-      -(
-        window.innerHeight -
-        document.querySelector(".hero__title-text").offsetHeight
-      ),
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top 0",
-      end: "bottom bottom",
-      pin: ".hero__title",
-      pinSpacing: false,
-      scrub: 0.75,
-    },
+gsap.registerPlugin(ScrollTrigger);
+
+const pinAnimation = () => {
+  const pinElements = document.querySelectorAll('[data-animation="pin"]');
+  
+  pinElements.forEach(element => {
+    const titleText = element.querySelector(".hero__title-text");
+    const titleContainer = element.querySelector(".hero__title");
+    
+    gsap.to(titleText, {
+      y: () => titleText.offsetHeight - window.innerHeight,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 0",
+        end: "bottom bottom",
+        pin: titleContainer,
+        pinSpacing: false,
+        scrub: 0.75,
+      },
+    });
   });
 };
 
-export default pinSideInSection;
+export default pinAnimation;
