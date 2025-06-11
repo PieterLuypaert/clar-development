@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@lottiefiles/dotlottie-web/dist/index.js":
@@ -7,7 +8,6 @@
   \***************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DotLottie: () => (/* binding */ V3),
@@ -47,7 +47,6 @@ return ret;
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CSSPlugin: () => (/* binding */ CSSPlugin),
@@ -1646,7 +1645,6 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Observer: () => (/* binding */ Observer),
@@ -2378,7 +2376,6 @@ _getGSAP() && gsap.registerPlugin(Observer);
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ScrollTrigger: () => (/* binding */ ScrollTrigger),
@@ -5084,7 +5081,6 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SplitText: () => (/* binding */ SplitText),
@@ -5410,7 +5406,6 @@ let SplitText = _SplitText;
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Animation: () => (/* binding */ Animation),
@@ -9998,7 +9993,6 @@ var Power0 = _easeMap.Power0,
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Back: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Back),
@@ -10044,7 +10038,6 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -10096,7 +10089,6 @@ var staggerFade = function staggerFade() {
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -10148,23 +10140,12 @@ var horizontalScroll = function horizontalScroll() {
 
 /***/ }),
 
-/***/ "./src/scripts/animations/mouse.js":
-/*!*****************************************!*\
-  !*** ./src/scripts/animations/mouse.js ***!
-  \*****************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
 /***/ "./src/scripts/animations/pin-animation.js":
 /*!*************************************************!*\
   !*** ./src/scripts/animations/pin-animation.js ***!
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -10204,7 +10185,6 @@ var pinAnimation = function pinAnimation() {
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -10255,20 +10235,21 @@ var loadingAnimation = function loadingAnimation(callback) {
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   showSvg: () => (/* binding */ showSvg)
+/* harmony export */   svgAnimation: () => (/* binding */ svgAnimation)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-var showSvg = function showSvg() {
-  document.querySelectorAll("[data-animation='svg-cirkel']").forEach(function ($svg) {
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($svg.querySelectorAll('circle'), {
+var svgAnimation = function svgAnimation() {
+  var $svgs = document.querySelectorAll("[data-animation='svg-cirkel']");
+  $svgs.forEach(function ($svg) {
+    var circles = $svg.querySelectorAll('circle');
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(circles, {
       scale: 0,
       transformOrigin: "center bottom",
       ease: 'power4.easeOut',
@@ -10282,7 +10263,7 @@ var showSvg = function showSvg() {
     });
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showSvg);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svgAnimation);
 
 /***/ }),
 
@@ -10292,7 +10273,6 @@ var showSvg = function showSvg() {
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -10331,7 +10311,6 @@ var fadeInTitles = function fadeInTitles() {
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -10367,20 +10346,17 @@ function loadLottieFiles() {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var gsap_SplitText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! gsap/SplitText */ "./node_modules/gsap/SplitText.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap_SplitText__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap/SplitText */ "./node_modules/gsap/SplitText.js");
 /* harmony import */ var _animations_titles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/titles */ "./src/scripts/animations/titles.js");
 /* harmony import */ var _animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/horizontal-scroll */ "./src/scripts/animations/horizontal-scroll.js");
 /* harmony import */ var _animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/pin-animation */ "./src/scripts/animations/pin-animation.js");
 /* harmony import */ var _animations_fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/fade */ "./src/scripts/animations/fade.js");
-/* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
-/* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_animations_mouse__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _animations_preloader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/preloader */ "./src/scripts/animations/preloader.js");
-/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
-/* harmony import */ var _animations_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/svg */ "./src/scripts/animations/svg.js");
+/* harmony import */ var _animations_preloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/preloader */ "./src/scripts/animations/preloader.js");
+/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
+/* harmony import */ var _animations_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/svg */ "./src/scripts/animations/svg.js");
 
 
 
@@ -10391,20 +10367,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-gsap__WEBPACK_IMPORTED_MODULE_8__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__["default"], gsap_SplitText__WEBPACK_IMPORTED_MODULE_10__.SplitText);
+gsap__WEBPACK_IMPORTED_MODULE_7__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_8__["default"], gsap_SplitText__WEBPACK_IMPORTED_MODULE_9__.SplitText);
 var afterLoad = function afterLoad() {
-  _animations_mouse__WEBPACK_IMPORTED_MODULE_4___default()();
   (0,_animations_horizontal_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_animations_pin_animation__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_lottie__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_lottie__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_animations_titles__WEBPACK_IMPORTED_MODULE_0__.fadeInTitles)();
   (0,_animations_fade__WEBPACK_IMPORTED_MODULE_3__.fadeInUp)();
   (0,_animations_fade__WEBPACK_IMPORTED_MODULE_3__.staggerFade)();
-  (0,_animations_svg__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_animations_svg__WEBPACK_IMPORTED_MODULE_6__["default"])();
 };
 document.addEventListener("DOMContentLoaded", function () {
-  (0,_animations_preloader__WEBPACK_IMPORTED_MODULE_5__["default"])(afterLoad);
+  (0,_animations_preloader__WEBPACK_IMPORTED_MODULE_4__["default"])(afterLoad);
 });
 
 /***/ }),
@@ -10415,7 +10389,6 @@ document.addEventListener("DOMContentLoaded", function () {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -10481,18 +10454,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	
