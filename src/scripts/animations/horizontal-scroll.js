@@ -6,10 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 const horizontalScroll = () => {
   const scrollContainer = document.querySelector("[data-animation='scroll']");
   
-   const hero = document.querySelector(".hero");
+  const hero = document.querySelector(".hero");
   const list = document.querySelector(".scroll__list"); 
   const items = document.querySelectorAll(".scroll__list li"); 
-  
   
   const defaultTextColor = hero.dataset.text;
   const defaultBgColor = hero.dataset.bg;
