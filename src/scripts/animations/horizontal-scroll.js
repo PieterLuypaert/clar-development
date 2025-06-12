@@ -43,7 +43,7 @@ const horizontalScroll = () => {
     },
   });
 
-  tl.to(list, { x: -list.scrollWidth }); // dit pasts simpelweg de animtie toe
+  tl.to(list, { x: -list.scrollWidth }); // dit pasts simpelweg de animtie toe 
 };
 
 export default horizontalScroll;

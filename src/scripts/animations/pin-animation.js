@@ -18,7 +18,6 @@ const pinAnimation = () => {
         end: "bottom bottom",
         pin: titleContainer,
         pinSpacing: false,
-        scrub: 0.75,
       },
     });
   });
