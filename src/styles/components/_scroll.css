@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   margin-top: var(--spacing-xl);
-  max-width: 100vw;
+  max-width: calc(100vw - (var(--sidebar)));
   margin-right: -var(--spacing-md);
   overflow: hidden;
   position: relative;
 }
 
-
 .scroll .scroll__list {
   list-style: none;
   display: flex;
+  padding-left: 35%;
 }
 
 .scroll .scroll__list li {
@@ -30,12 +30,12 @@
   margin-inline-end: 40px;
 }
 
-@media screen and (min-width: 756px) {
+@media screen and (max-width: 755px) {
   .scroll {
-    max-width: calc(100vw - (var(--sidebar)));
+    max-width: 100vw;
   }
 
   .scroll .scroll__list {
-    padding-left: 35%;
+    padding-left: 0;
   }
 }
