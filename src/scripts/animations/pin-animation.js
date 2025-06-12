@@ -5,11 +5,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const pinAnimation = () => {
   const pinElements = document.querySelectorAll('[data-animation="pin"]');
-  
-  pinElements.forEach(element => {
+
+  pinElements.forEach((element) => {
     const titleText = element.querySelector(".hero__title-text");
     const titleContainer = element.querySelector(".hero__title");
-    
+
     gsap.to(titleText, {
       y: () => titleText.offsetHeight - window.innerHeight,
       scrollTrigger: {
