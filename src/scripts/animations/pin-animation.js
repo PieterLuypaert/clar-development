@@ -14,7 +14,7 @@ const pinAnimation = () => {
       y: () => titleText.offsetHeight - window.innerHeight,
       scrollTrigger: {
         trigger: element,
-        start: "top 0",
+        start: "top",
         end: "bottom bottom",
         pin: titleContainer,
         pinSpacing: false,
