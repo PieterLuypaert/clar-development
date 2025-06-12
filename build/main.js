@@ -10134,7 +10134,7 @@ var horizontalScroll = function horizontalScroll() {
   });
   tl.to(list, {
     x: -list.scrollWidth
-  });
+  }); // dit pasts simpelweg de animtie toe
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (horizontalScroll);
 
