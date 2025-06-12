@@ -460,7 +460,7 @@ h2,
 }
 
 .button.button-shape {
-    --size: 40rem;
+    --size: 30rem;
     --size-inner: calc(var(--size) / 4);
     color: var(--bright);
     width: var(--size);
@@ -476,13 +476,23 @@ h2,
     width: var(--size-inner);
     height: var(--size-inner);
     border-radius: var(--size);
-    transition: all .5s cubic-bezier(.97,-0.53,.28,1.44);
-    font-size: var(--text-bm);
+    font-size: var(--text-sm);
 }
 
 .button.button-shape:hover .button__idk {
     transform: scale(.75) rotate(4deg);
     transform-origin: center;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    .button.button-shape {
+        --size: 40rem;
+    }
+    
+    .button.button-shape .button__idk {
+        font-size: var(--text-bm);
+    }
 }
 
 .svg {
@@ -520,7 +530,7 @@ section:last-of-type {
 }
 
 .footer .button {
-    margin-top: -15rem;
+    margin-top: -10rem;
 }
 
 
