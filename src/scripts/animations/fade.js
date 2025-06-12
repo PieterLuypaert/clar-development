@@ -9,9 +9,9 @@ export const fadeInUp = () => {
             y: 100,
             duration: 0.75,
             scrollTrigger: {
-            trigger: $element, 
-            start: "top 80%",
-            toggleActions: "play reset play reset"
+                trigger: $element, 
+                start: "top 80%",
+                toggleActions: "play reset play reset"
             }
         });
     });
