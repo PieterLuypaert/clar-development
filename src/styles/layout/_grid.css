@@ -1,16 +1,18 @@
 .columns {
   display: grid;
-
-  @media screen and (width > 756px) {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  
+  @media screen and (width <= 756px) {
+    grid-template-columns: 1fr;
   }
 }
 
 .pin {
   display: grid;
   align-items: flex-start;
-
-  @media screen and (width > 756px) {
-    grid-template-columns: var(--sidebar) 1fr;
+  grid-template-columns: var(--sidebar) 1fr;
+  
+  @media screen and (max-width: 756px) {
+    grid-template-columns: 1fr;
   }
 }
