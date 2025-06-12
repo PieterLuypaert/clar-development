@@ -26,17 +26,17 @@
   padding-bottom: var(--spacing-lg);
 }
 
-.color-section__one {
+.color-section__primary {
   background-color: var(--primary);
   color: var(--bright);
 }
 
-.color-section__two {
+.color-section__green {
   background-color: var(--secondary-medium);
   color: var(--secondary-light);
 }
 
-.color-section__tree {
+.color-section__muted {
   background-color: var(--muted);
   color: var(--soft);
 }

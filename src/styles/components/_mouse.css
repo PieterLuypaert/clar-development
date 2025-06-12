@@ -1,5 +1,5 @@
 .mouse {
-    position: fixed;
+    /* position: fixed;
     inset: 0;
     
     width: 2rem;
@@ -12,5 +12,5 @@
     
     @media (max-width: 768px) {
         display: none;
-    }
+    } */
 }

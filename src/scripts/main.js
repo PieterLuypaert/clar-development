@@ -2,7 +2,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { fadeInTitles } from "./animations/titles";
-import horizontalScroll, { pinSlider } from "./animations/horizontal-scroll";
+import horizontalScroll from "./animations/horizontal-scroll";
 import pinSideInSection from "./animations/pin-animation";
 import { fadeInUp, staggerFade } from "./animations/fade";
 import loadingAnimation from "./animations/preloader";
@@ -24,3 +24,5 @@ const afterLoad = () => {
 document.addEventListener("DOMContentLoaded", () => {
   loadingAnimation(afterLoad);
 });
+
+
