@@ -1,9 +1,9 @@
 .list {
-    margin-left: var(--spacing-base);
+    margin-left: 0;
 }
 
 .list li {
-    padding-left: var(--spacing-base);
+    padding-left: 0;
 }
 
 .list li::marker {
@@ -34,4 +34,14 @@
 
 .list.lines li::marker {
     content: none;
+}
+
+@media (min-width: 768px) {
+    .list {
+        margin-left: var(--spacing-base);
+    }
+    
+    .list li {
+        padding-left: var(--spacing-base);
+    }
 }
