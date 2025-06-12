@@ -499,7 +499,7 @@ h2,
   stroke: currentColor;
 }
 
-section:last-of-type {
+.footer__idk {
     margin-bottom: 100vh;
 }
 
