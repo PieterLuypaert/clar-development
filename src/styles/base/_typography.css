@@ -17,9 +17,9 @@ h2,
 .text li,
 .scroll__list p,
 .scroll__list li {
-  font-size: var(--text-bm);
-  line-height: 1.35;
-  letter-spacing: 0.05rem;
+  font-size: calc(var(--text-bm) * 0.85); 
+  line-height: 1.3;
+  letter-spacing: 0.04rem;
 }
 
 .text-primary {
@@ -28,4 +28,28 @@ h2,
 
 .text-secondary {
   color: var(--secondary-light);
+}
+
+@media (min-width: 768px) {
+  .uppercase.uppercase__wide,
+  .text p,
+  .text li,
+  .scroll__list p,
+  .scroll__list li {
+    font-size: calc(var(--text-bm) * 0.92);
+    line-height: 1.33;
+    letter-spacing: 0.045rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .uppercase.uppercase__wide,
+  .text p,
+  .text li,
+  .scroll__list p,
+  .scroll__list li {
+    font-size: var(--text-bm);
+    line-height: 1.35;
+    letter-spacing: 0.05rem;
+  }
 }
