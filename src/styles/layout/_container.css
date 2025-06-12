@@ -1,24 +1,24 @@
 .container {
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-  --sidebar: 90vw;
-  font-size: calc(1rem + 0.5vw);
+  padding: 0 var(--spacing-lg);
+  --sidebar: 40vw;
+  font-size: calc(1.3rem + 1.2vw);
   
-  @media screen and (min-width: 480px) {
+  @media screen and (max-width: 991px) {
+    --sidebar: 50vw;
+    font-size: calc(1.2rem + 1vw);
+  }
+  
+  @media screen and (max-width: 756px) {
     padding: 0 var(--spacing-md);
     --sidebar: 70vw;
     font-size: calc(1.1rem + 0.8vw);
   }
   
-  @media screen and (min-width: 757px) {
-    padding: 0 var(--spacing-lg);
-    --sidebar: 50vw;
-    font-size: calc(1.2rem + 1vw);
-  }
-  
-  @media screen and (min-width: 992px) {
-    --sidebar: 40vw;
-    font-size: calc(1.3rem + 1.2vw);
+  @media screen and (max-width: 479px) {
+    padding: 0 var(--spacing-sm);
+    --sidebar: 90vw;
+    font-size: calc(1rem + 0.5vw);
   }
 }
