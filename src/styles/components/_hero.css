@@ -37,11 +37,11 @@
   margin-bottom: 0;
 }
 
-/* Mobile styles */
 @media screen and (max-width: 755px) {
   .hero .hero__header {
     display: block;
     min-height: auto;
+    font-size: 3rem;
   }
 
   .hero .hero__title {
