@@ -10115,8 +10115,8 @@ var horizontalScroll = function horizontalScroll() {
       onUpdate: function onUpdate(_ref) {
         var progress = _ref.progress;
         // zoekt actieve element of stuk op basis van scrollen
-        var index = Math.min(Math.floor(progress * items.length), items.length - 1);
-        var activeItem = items[index];
+        var scroll = Math.min(Math.floor(progress * items.length), items.length - 1);
+        var activeItem = items[scroll];
 
         // dit pats de kleur veranderen toe
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {

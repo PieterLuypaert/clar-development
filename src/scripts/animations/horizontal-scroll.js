@@ -5,11 +5,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const horizontalScroll = () => {
   const scrollContainer = document.querySelector("[data-animation='scroll']");
-  
+
   const hero = document.querySelector(".hero");
-  const list = document.querySelector(".scroll__list"); 
-  const items = document.querySelectorAll(".scroll__list li"); 
-  
+  const list = document.querySelector(".scroll__list");
+  const items = document.querySelectorAll(".scroll__list li");
+
   const defaultTextColor = hero.dataset.text;
   const defaultBgColor = hero.dataset.bg;
 
@@ -17,14 +17,17 @@ const horizontalScroll = () => {
     scrollTrigger: {
       trigger: scrollContainer,
       start: "center center",
-      end: "3000", 
+      end: "3000",
       pin: true,
       scrub: true,
       onUpdate: ({ progress }) => {
         // zoekt actieve element of stuk op basis van scrollen
-        const index = Math.min(Math.floor(progress * items.length), items.length - 1);
-        const activeItem = items[index];
-        
+        const scroll = Math.min(
+          Math.floor(progress * items.length),
+          items.length - 1
+        );
+        const activeItem = items[scroll];
+
         // dit pats de kleur veranderen toe
         gsap.to(hero, {
           "--hero-text-color": activeItem.dataset.text,
@@ -36,10 +39,10 @@ const horizontalScroll = () => {
           "--hero-text-color": defaultTextColor,
           "--hero-bg-color": defaultBgColor,
         });
-      }
-    }
+      },
+    },
   });
-  
+
   tl.to(list, { x: -list.scrollWidth });
 };
 
