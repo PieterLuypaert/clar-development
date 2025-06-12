@@ -498,7 +498,7 @@ h2,
     width: var(--size);
     height: var(--size);
     background-color: transparent;
-}
+} 
 
 .button.button-shape .button__idk {
     display: inline-flex;
@@ -509,11 +509,6 @@ h2,
     height: var(--size-inner);
     border-radius: var(--size);
     font-size: var(--text-bm);
-}
-
-.button.button-shape:hover .button__idk {
-    transform: scale(.75) rotate(4deg);
-    transform-origin: center;
 }
 
 @media screen and (max-width: 767px) {

@@ -10169,7 +10169,8 @@ var pinAnimation = function pinAnimation() {
         start: "top",
         end: "bottom bottom",
         pin: titleContainer,
-        pinSpacing: false
+        pinSpacing: false,
+        scrub: 0.75
       }
     });
   });
