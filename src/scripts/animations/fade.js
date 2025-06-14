@@ -16,21 +16,18 @@ export const fadeInUp = () => {
         });
     });
 }
-
 export const staggerFade = () => {
-    const $lists = document.querySelectorAll("[data-animation='stagger-fade']");
+    const $elements = document.querySelectorAll("[data-animation='stagger-fade']");
 
-    $lists.forEach($list => {
-        gsap.from($list.querySelectorAll('li'), {
-            opacity: 0,
-            x: -20,
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: $list,
-                start: "top 80%",
-                toggleActions: "play reset play reset"
-            }
-        });
+    gsap.from($elements, {
+        opacity: 0,
+        x: -20,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: $elements[1],
+            start: "top 80%",
+            toggleActions: "play reset play reset"
+        }
     });
 }
 

@@ -10062,18 +10062,16 @@ var fadeInUp = function fadeInUp() {
   });
 };
 var staggerFade = function staggerFade() {
-  var $lists = document.querySelectorAll("[data-animation='stagger-fade']");
-  $lists.forEach(function ($list) {
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($list.querySelectorAll('li'), {
-      opacity: 0,
-      x: -20,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: $list,
-        start: "top 80%",
-        toggleActions: "play reset play reset"
-      }
-    });
+  var $elements = document.querySelectorAll("[data-animation='stagger-fade']");
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($elements, {
+    opacity: 0,
+    x: -20,
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: $elements[1],
+      start: "top 80%",
+      toggleActions: "play reset play reset"
+    }
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -10318,7 +10316,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @lottiefiles/dotlottie-web */ "./node_modules/@lottiefiles/dotlottie-web/dist/index.js");
 
 function loadLottieFiles() {
-  var $canvases = document.querySelectorAll("canvas[data-lottie-source]");
+  var $canvases = document.querySelectorAll("[data-lottie-source]");
   $canvases.forEach(function ($canvas) {
     var dotLottie = new _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_0__.DotLottie({
       autoplay: true,

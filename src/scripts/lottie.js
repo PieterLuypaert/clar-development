@@ -1,7 +1,7 @@
 import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 function loadLottieFiles() {
-    const $canvases = document.querySelectorAll("canvas[data-lottie-source]");
+    const $canvases = document.querySelectorAll("[data-lottie-source]");
 
     $canvases.forEach($canvas => {
         const dotLottie = new DotLottie({
