@@ -10150,10 +10150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   mouseAnimation: () => (/* binding */ mouseAnimation)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
-
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 var mouseAnimation = function mouseAnimation() {
   var ball = document.querySelector('[data-animation="mouse"]');
   if (!ball) return;
@@ -10163,26 +10160,15 @@ var mouseAnimation = function mouseAnimation() {
     scale: 0,
     opacity: 0
   });
-  var xTo = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo(ball, "x", {
-    duration: 0.6,
-    ease: "power3"
-  });
-  var yTo = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo(ball, "y", {
-    duration: 0.6,
-    ease: "power3"
-  });
-  var isVisible = false;
   window.addEventListener("mousemove", function (e) {
-    xTo(e.clientX);
-    yTo(e.clientY);
-    if (!isVisible) {
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(ball, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3
-      });
-      isVisible = true;
-    }
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(ball, {
+      x: e.clientX,
+      y: e.clientY,
+      opacity: 1,
+      scale: 1,
+      duration: 0.3,
+      ease: "power3"
+    });
   });
   document.addEventListener("mouseleave", function () {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(ball, {
@@ -10190,25 +10176,6 @@ var mouseAnimation = function mouseAnimation() {
       opacity: 0,
       duration: 0.3
     });
-    isVisible = false;
-  });
-  document.addEventListener("mouseenter", function () {
-    if (isVisible) gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(ball, {
-      scale: 1,
-      opacity: 1,
-      duration: 0.3
-    });
-  });
-  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-    trigger: "body",
-    start: "top top",
-    end: "bottom bottom",
-    onUpdate: function onUpdate(self) {
-      if (self.isActive && isVisible) gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(ball, {
-        opacity: 0.7,
-        duration: 0.2
-      });
-    }
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mouseAnimation);

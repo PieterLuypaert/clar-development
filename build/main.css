@@ -312,7 +312,7 @@ inset: 0;
 width: 2rem;
 height: 2rem;
 mix-blend-mode: difference;
-background-color: var(--primary);
+background-color: var(--accent);
 border-radius: 50%;
 }
 .title {
