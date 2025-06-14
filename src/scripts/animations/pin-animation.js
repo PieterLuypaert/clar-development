@@ -7,18 +7,18 @@ const pinAnimation = () => {
   const pinElements = document.querySelectorAll('[data-animation="pin"]');
 
   pinElements.forEach((element) => {
-    const titleText = element.querySelector(".hero__title-text");
-    const titleContainer = element.querySelector(".hero__title");
+    const titleText = element.querySelector('[data-animation="pinned-span"]');
+    const titleContainer = element.querySelector('[data-animation="pinned-element"]');
 
     gsap.to(titleText, {
       y: () => titleText.offsetHeight - window.innerHeight,
       scrollTrigger: {
         trigger: element,
-        start: "top",
+        start: "top top",
         end: "bottom bottom",
         pin: titleContainer,
         pinSpacing: false,
-        scrub: 0.75,
+        scrub: 1,
       },
     });
   });

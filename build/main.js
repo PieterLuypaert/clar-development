@@ -10156,19 +10156,19 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 var pinAnimation = function pinAnimation() {
   var pinElements = document.querySelectorAll('[data-animation="pin"]');
   pinElements.forEach(function (element) {
-    var titleText = element.querySelector(".hero__title-text");
-    var titleContainer = element.querySelector(".hero__title");
+    var titleText = element.querySelector('[data-animation="pinned-span"]');
+    var titleContainer = element.querySelector('[data-animation="pinned-element"]');
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(titleText, {
       y: function y() {
         return titleText.offsetHeight - window.innerHeight;
       },
       scrollTrigger: {
         trigger: element,
-        start: "top",
+        start: "top top",
         end: "bottom bottom",
         pin: titleContainer,
         pinSpacing: false,
-        scrub: 0.75
+        scrub: 1
       }
     });
   });
