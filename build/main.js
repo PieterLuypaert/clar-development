@@ -10100,7 +10100,7 @@ var horizontalScroll = function horizontalScroll() {
   var scrollContainer = document.querySelector("[data-animation='scroll']");
   var hero = document.querySelector("[data-animation='pin']");
   var list = scrollContainer.querySelector("[data-animation='scroll-list']");
-  var items = scrollContainer.querySelectorAll("[data-animation='scroll-list-animation']");
+  var items = scrollContainer.querySelectorAll("li");
   var defaultTextColor = hero.dataset.text;
   var defaultBgColor = hero.dataset.bg;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({

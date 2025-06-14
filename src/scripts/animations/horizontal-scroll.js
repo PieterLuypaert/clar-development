@@ -8,7 +8,7 @@ const horizontalScroll = () => {
 
   const hero = document.querySelector("[data-animation='pin']");
   const list = scrollContainer.querySelector("[data-animation='scroll-list']");
-  const items = scrollContainer.querySelectorAll("[data-animation='scroll-list-animation']");
+  const items = scrollContainer.querySelectorAll("li");
 
   const defaultTextColor = hero.dataset.text;
   const defaultBgColor = hero.dataset.bg;
