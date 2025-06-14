@@ -306,6 +306,14 @@ h2,
 }
 
 .mouse {
+position: fixed;
+inset: 0;
+
+width: 2rem;
+height: 2rem;
+mix-blend-mode: difference;
+background-color: var(--primary);
+border-radius: 50%;
 }
 .title {
   line-height: 1.2;
