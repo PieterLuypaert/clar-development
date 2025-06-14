@@ -10244,13 +10244,13 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 var svgAnimation = function svgAnimation() {
-  var $svgs = document.querySelectorAll("[data-animation='svg-cirkel']");
+  var $svgs = document.querySelectorAll("[data-animation='svg-cirkle']");
   $svgs.forEach(function ($svg) {
-    var circles = $svg.querySelectorAll('circle');
+    var circles = $svg.querySelectorAll('[data-animation="cirkle"]');
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(circles, {
       scale: 0,
       transformOrigin: "center bottom",
-      ease: 'power4.easeOut',
+      ease: "power4.easeOut",
       stagger: 0.1,
       scrollTrigger: {
         trigger: $svg,
