@@ -10328,7 +10328,8 @@ var fadeInTitles = function fadeInTitles() {
     var animation = $element.querySelectorAll("span");
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(animation, {
       y: "100%",
-      opacity: 0
+      opacity: 0,
+      rotation: 5
     }, {
       y: 0,
       opacity: 1,

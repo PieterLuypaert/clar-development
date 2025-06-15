@@ -10,6 +10,7 @@ export const fadeInTitles = () => {
             { 
                 y: "100%",
                 opacity: 0,
+                rotation: 5,
             },
             {
                 y: 0,
