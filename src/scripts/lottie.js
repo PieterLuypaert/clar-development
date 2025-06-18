@@ -14,10 +14,6 @@ function loadLottieFiles() {
             },
             src: `/assets/lotties/${$canvas.getAttribute('data-lottie-source')}`
         });
-
-        window.addEventListener("resize", () => {
-            dotLottie.resize();
-        });
     });
 }
 

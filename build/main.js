@@ -10373,9 +10373,6 @@ function loadLottieFiles() {
       },
       src: "/assets/lotties/".concat($canvas.getAttribute('data-lottie-source'))
     });
-    window.addEventListener("resize", function () {
-      dotLottie.resize();
-    });
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadLottieFiles);
