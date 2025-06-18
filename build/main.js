@@ -10251,8 +10251,7 @@ var loadingAnimation = function loadingAnimation(callback) {
     y: 0,
     rotation: 0,
     duration: .5,
-    delay: .25,
-    ease: "power4.inOut"
+    delay: .25
   }).to($loaderText, {
     yPercent: -100,
     rotation: -6,
@@ -10260,8 +10259,7 @@ var loadingAnimation = function loadingAnimation(callback) {
     delay: .25
   }).to($loader, {
     scaleX: 0,
-    transformOrigin: 'right center',
-    ease: "power4.inOut"
+    transformOrigin: 'right center'
   });
   return loadingTimeline;
 };
@@ -10292,7 +10290,6 @@ var svgAnimation = function svgAnimation() {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(circles, {
       scale: 0,
       transformOrigin: "center bottom",
-      ease: "power4.easeOut",
       stagger: 0.1,
       scrollTrigger: {
         trigger: $svg,

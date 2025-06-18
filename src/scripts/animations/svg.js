@@ -12,7 +12,6 @@ export const svgAnimation = () => {
     gsap.from(circles, {
       scale: 0,
       transformOrigin: "center bottom",
-      ease: "power4.easeOut",
       stagger: 0.1,
       scrollTrigger: {
         trigger: $svg,

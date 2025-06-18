@@ -22,7 +22,6 @@ export const loadingAnimation = (callback) => {
             rotation: 0,
             duration: .5,
             delay: .25,
-            ease: "power4.inOut"
         })
         .to($loaderText, {
             yPercent: -100,
@@ -33,7 +32,6 @@ export const loadingAnimation = (callback) => {
         .to($loader, {
             scaleX: 0,
             transformOrigin: 'right center',
-            ease: "power4.inOut"
         });
 
     return loadingTimeline;
