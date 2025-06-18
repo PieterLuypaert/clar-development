@@ -13,7 +13,6 @@ export const mouseAnimation = () => {
             opacity: 1, 
             scale: 1, 
             duration: 0.3,
-            ease: "power3"
         });
     });
     

@@ -10166,8 +10166,7 @@ var mouseAnimation = function mouseAnimation() {
       y: e.clientY,
       opacity: 1,
       scale: 1,
-      duration: 0.3,
-      ease: "power3"
+      duration: 0.3
     });
   });
   document.addEventListener("mouseleave", function () {
