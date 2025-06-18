@@ -11,7 +11,6 @@ function loadLottieFiles() {
             speed: 2,
             layout: {
                 fit: "cover",
-                align: [.5, 0]
             },
             src: `/assets/lotties/${$canvas.getAttribute('data-lottie-source')}`
         });
