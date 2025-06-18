@@ -15,6 +15,13 @@
   width: var(--size);
   height: var(--size);
   background-color: transparent;
+  transition: all 0.5s cubic-bezier(0.97, -0.53, 0.28, 1.44);
+}
+
+.button.button-shape:hover {
+  transform: scale(0.75) rotate(4deg);
+  transform-origin: center;
+  transition: all 0.5s cubic-bezier(0.97, -0.53, 0.28, 1.44);
 }
 
 .button.button-shape .button__idk {
@@ -26,15 +33,6 @@
   height: var(--size-inner);
   border-radius: var(--size);
   font-size: var(--text-bm);
-}
-
-.button__idk {
-  transition: all 0.5s cubic-bezier(0.97, -0.53, 0.28, 1.44);
-}
-
-.button__idk:hover {
-  transform: scale(0.75) rotate(4deg);
-  transform-origin: center;
 }
 
 @media screen and (max-width: 767px) {
