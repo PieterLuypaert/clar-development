@@ -10,8 +10,9 @@ const horizontalScroll = () => {
   const list = scrollContainer.querySelector("[data-animation='scroll-list']");
   const items = scrollContainer.querySelectorAll("li");
 
-  const defaultTextColor = hero.dataset.text;
-  const defaultBgColor = hero.dataset.bg;
+  const styles = getComputedStyle(hero);
+  const defaultTextColor = hero.dataset.text || styles.getPropertyValue("--hero-text-color").trim();
+  const defaultBgColor = hero.dataset.bg || styles.getPropertyValue("--hero-bg-color").trim();
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -28,11 +29,13 @@ const horizontalScroll = () => {
         );
         const activeItem = items[scroll];
 
-        // dit pats de kleur veranderen toe
-        gsap.to(hero, {
-          "--hero-text-color": activeItem.dataset.text,
-          "--hero-bg-color": activeItem.dataset.bg,
-        });
+        // Only change colors if the active item has the data attributes
+        if (activeItem.dataset.text && activeItem.dataset.bg) {
+          gsap.to(hero, {
+            "--hero-text-color": activeItem.dataset.text,
+            "--hero-bg-color": activeItem.dataset.bg,
+          });
+        }
       },
       onLeaveBack: () => {
         gsap.to(hero, {

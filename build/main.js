@@ -10101,8 +10101,9 @@ var horizontalScroll = function horizontalScroll() {
   var hero = document.querySelector("[data-animation='pin']");
   var list = scrollContainer.querySelector("[data-animation='scroll-list']");
   var items = scrollContainer.querySelectorAll("li");
-  var defaultTextColor = hero.dataset.text;
-  var defaultBgColor = hero.dataset.bg;
+  var styles = getComputedStyle(hero);
+  var defaultTextColor = hero.dataset.text || styles.getPropertyValue("--hero-text-color").trim();
+  var defaultBgColor = hero.dataset.bg || styles.getPropertyValue("--hero-bg-color").trim();
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: scrollContainer,
@@ -10116,11 +10117,13 @@ var horizontalScroll = function horizontalScroll() {
         var scroll = Math.min(Math.floor(progress * items.length), items.length - 1);
         var activeItem = items[scroll];
 
-        // dit pats de kleur veranderen toe
-        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
-          "--hero-text-color": activeItem.dataset.text,
-          "--hero-bg-color": activeItem.dataset.bg
-        });
+        // Only change colors if the active item has the data attributes
+        if (activeItem.dataset.text && activeItem.dataset.bg) {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
+            "--hero-text-color": activeItem.dataset.text,
+            "--hero-bg-color": activeItem.dataset.bg
+          });
+        }
       },
       onLeaveBack: function onLeaveBack() {
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
