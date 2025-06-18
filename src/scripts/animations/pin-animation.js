@@ -23,7 +23,6 @@ const pinAnimation = () => {
       start: "top top",
       end: "bottom bottom",
       pin: titleContainer,
-      pinSpacing: false,
       scrub: 1,
       },
     });
