@@ -10,15 +10,21 @@ const pinAnimation = () => {
     const titleText = element.querySelector('[data-animation="pinned-span"]');
     const titleContainer = element.querySelector('[data-animation="pinned-element"]');
 
+    const isCanvas = titleText.tagName === 'CANVAS';
+    
+    const yOffset = isCanvas 
+      ? titleContainer.offsetHeight - titleText.offsetHeight
+      : titleText.offsetHeight - window.innerHeight;
+    
     gsap.to(titleText, {
-      y: () => titleText.offsetHeight - window.innerHeight,
+      y: yOffset,
       scrollTrigger: {
-        trigger: element,
-        start: "top top",
-        end: "bottom bottom",
-        pin: titleContainer,
-        pinSpacing: false,
-        scrub: 1,
+      trigger: element,
+      start: "top top",
+      end: "bottom bottom",
+      pin: titleContainer,
+      pinSpacing: false,
+      scrub: 1,
       },
     });
   });

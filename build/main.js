@@ -10202,10 +10202,10 @@ var pinAnimation = function pinAnimation() {
   pinElements.forEach(function (element) {
     var titleText = element.querySelector('[data-animation="pinned-span"]');
     var titleContainer = element.querySelector('[data-animation="pinned-element"]');
+    var isCanvas = titleText.tagName === 'CANVAS';
+    var yOffset = isCanvas ? titleContainer.offsetHeight - titleText.offsetHeight : titleText.offsetHeight - window.innerHeight;
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(titleText, {
-      y: function y() {
-        return titleText.offsetHeight - window.innerHeight;
-      },
+      y: yOffset,
       scrollTrigger: {
         trigger: element,
         start: "top top",
