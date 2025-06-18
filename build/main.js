@@ -10113,11 +10113,8 @@ var horizontalScroll = function horizontalScroll() {
       scrub: true,
       onUpdate: function onUpdate(_ref) {
         var progress = _ref.progress;
-        // zoekt actieve element of stuk op basis van scrollen
         var scroll = Math.min(Math.floor(progress * items.length), items.length - 1);
         var activeItem = items[scroll];
-
-        // Only change colors if the active item has the data attributes
         if (activeItem.dataset.text && activeItem.dataset.bg) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(hero, {
             "--hero-text-color": activeItem.dataset.text,

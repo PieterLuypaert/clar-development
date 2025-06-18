@@ -22,14 +22,12 @@ const horizontalScroll = () => {
       pin: true,
       scrub: true,
       onUpdate: ({ progress }) => {
-        // zoekt actieve element of stuk op basis van scrollen
         const scroll = Math.min(
           Math.floor(progress * items.length),
           items.length - 1
         );
         const activeItem = items[scroll];
 
-        // Only change colors if the active item has the data attributes
         if (activeItem.dataset.text && activeItem.dataset.bg) {
           gsap.to(hero, {
             "--hero-text-color": activeItem.dataset.text,
