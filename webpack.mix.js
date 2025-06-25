@@ -6,5 +6,5 @@ mix
     .postCss("src/styles/main.css", "build")
     .version()
     .browserSync({
-        server: true
+        server: false
     });
