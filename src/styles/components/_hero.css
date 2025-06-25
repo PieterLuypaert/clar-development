@@ -17,10 +17,6 @@
   font-size: clamp(var(--text-lg), var(--sidebar), var(--text-xxxl));
   line-height: 1;
   display: inline;
-  writing-mode: initial;
-  text-orientation: initial;
-  transform: none;
-  text-align: initial;
 }
 
 .hero .hero__title-text {

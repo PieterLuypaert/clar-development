@@ -13,9 +13,9 @@
     align-items: center;
     background-color: var(--accent);
     color: var(--secondary-dark);
-}
 
-.footer .container {
+    
+  & .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +23,8 @@
     padding: 0 1rem;
     width: 100%;
 }
+}
+
 
 .footer h2 {
     text-align: center;
