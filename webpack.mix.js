@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+import mix from 'laravel-mix';
 
 mix
     .js("src/scripts/main.js", "build")
@@ -6,5 +6,6 @@ mix
     .postCss("src/styles/main.css", "build")
     .version()
     .browserSync({
-        server: false
+        server: false,
+        open: false
     });
