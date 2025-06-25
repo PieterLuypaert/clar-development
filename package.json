@@ -5,7 +5,8 @@
   "scripts": {
     "watch": "mix watch",
     "build": "mix --production",
-    "deploy": "npm run build && gh-pages -d build"
+    "postbuild": "xcopy \"assets\" \"build\\assets\" /E /I /Y",
+    "deploy": "npm run build && npm run postbuild && gh-pages -d build"
   },
   "author": "Pieter Luypaert",
   "license": "MIT",
